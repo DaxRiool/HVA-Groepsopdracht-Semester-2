@@ -1,0 +1,22 @@
+<main>
+  <section>
+    <h1>Login</h1>
+    <form #form="ngForm" (ngSubmit)="checkUserInput()">
+      <article>
+        <label for="email">Email</label>
+        <input type="text" name="email" [(ngModel)]="email" />
+      </article>
+      <article>
+        <label for="password">Password</label>
+        <input type="password" name="password" [(ngModel)]="password" />
+      </article>
+      <button type="submit">Login</button>
+    </form>
+    <article *ngIf="errorMessage" class="errorMessage">
+      {{ errorMessage }}
+    </article>
+    <article *ngIf="succesMessage" class="succesMessage">
+      {{ succesMessage }}
+    </article>
+  </section>
+</main>

@@ -1,0 +1,21 @@
+<section class="container-list">
+  <header class="list-header">
+    <p></p>
+    <h1>Locaties</h1>
+    <a href="addlocation"><button class="delete-button">Toevoegen</button></a>
+  </header>
+  <table class="list">
+    <tbody *ngFor="let location of locations">
+      <tr class="list-row">
+        <td>
+          <p class="row-name">{{ location.location }}</p>
+        </td>
+        <td class="buttons">
+          <button class="delete-button" (click)="openPopupLocation(location)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

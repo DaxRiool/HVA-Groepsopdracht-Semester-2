@@ -1,0 +1,97 @@
+.header-section,
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.main-article {
+  background-color: rgba(216, 147, 217, 0.3);
+  border-radius: 5px;
+  width: 23%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.main-article h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.main-article p {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.header-article {
+  display: flex;
+  justify-content: space-between;
+}
+
+.styled-hr {
+  height: 25px;
+  background-color: #4c66c0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(216, 147, 217, 0.3);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 25%;
+  position: relative;
+}
+
+.rounded-box {
+  background-color: rgba(216, 147, 217, 0.3);
+  color: black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  flex-grow: 1;
+  text-align: center;
+  width: 20vw;
+  height: 20vh;
+  align-self: center;
+}
+
+h2,
+p {
+  margin: 0;
+  padding: 10px 0;
+}
+
+table {
+  width: 60vw;
+  margin: auto;
+  overflow-y: auto;
+  max-height: 40vh;
+  border: black 1px solid;
+  table-layout: fixed;
+  display: block;
+  margin-bottom: 10%;
+}
+thead tr {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+th {
+  width: 60vw;
+  flex: 1;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.errorMessage {
+  display: flex;
+  justify-self: center;
+  color: red;
+  font-size: large;
+  margin-top: 1em;
+  text-align: center;
+}

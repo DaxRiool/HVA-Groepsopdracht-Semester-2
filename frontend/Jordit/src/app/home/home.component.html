@@ -1,0 +1,39 @@
+<h2 class="title">Hier kunt u uw vaste ritten aangeven</h2>
+<div id="vaste-ritten">
+  <div *ngFor="let day of dayOfTheWeek" class="day">
+    {{ day.date }}
+    {{ day.day }}
+    <form>
+      <select>
+        <!-- De option hieronder is aanwezig om niks te laten zien totdat de gebruiker het selecteerd -->
+        <option></option>
+        <option (click)="toRide()">
+          <!-- deze methode meot nog aangepast worden zodra de backend verbonden is -->
+          {{ getStats() }}
+        </option>
+        <option (click)="toRide()">
+          {{ getStats() }}
+        </option>
+        <option (click)="toRide()">anders declareren</option>
+      </select>
+    </form>
+  </div>
+</div>
+<div class="buttons">
+  <div id="stats">
+    <h2>Kilometers:<br />{{ getStats() }}</h2>
+  </div>
+  <button routerLink="/ritten">Nieuwe rit</button>
+  <button (click)="toRide()">auto lenen</button>
+</div>
+<section id="bottom-section">
+  <h2 class="title" id="bottom">Hier kunt u uw afgelopen ritten verwijderen</h2>
+  <div id="afgelopen-ritten">
+    <article *ngFor="let afgelopenRit of afgelopenRitten" class="afgelopen-rit">
+      <h3>{{ afgelopenRit.travelDate }}</h3>
+      <p>{{ afgelopenRit.locationFrom }}</p>
+      <p>{{ afgelopenRit.locationTo }}</p>
+      <button (click)="openPopUp(afgelopenRit)">Delete</button>
+    </article>
+  </div>
+</section>

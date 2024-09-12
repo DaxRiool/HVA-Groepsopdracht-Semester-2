@@ -1,0 +1,61 @@
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+section {
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+article {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+button {
+  background-color: #4c66c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 6em;
+  font-size: large;
+  margin-top: 2em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+label {
+    font-size: x-large;
+}
+
+.errorMessage {
+    color: red;
+    font-size: large;
+    margin-top: 1em;
+}
+
+.succesMessage {
+    color: green;
+    font-size: large;
+    margin-top: 1em;
+}

@@ -1,0 +1,36 @@
+<!-- This is the main container for the administration page -->
+<section class="container">
+  <!-- This block is only visible to users with access to 'Wagenpark Beheer' -->
+  <a routerLink="/wagenpark-beheer" class="link-article">
+    <article class="block" *ngIf="hasAccess('Wagenpark Beheer')">
+      <nav>Wagenpark Beheer</nav>
+    </article>
+  </a>
+
+  <!-- This block is only visible to users with access to 'Personeels Beheer' -->
+  <a routerLink="/personeel-beheer" class="link-article">
+    <article class="block" *ngIf="hasAccess('Personeels Beheer')">
+      <nav>Personeels Beheer</nav>
+    </article>
+  </a>
+
+  <!-- This block is only visible to users with access to 'CO2 Dashboard' -->
+  <a routerLink="/dashboard" class="link-article">
+    <article class="block" *ngIf="hasAccess('CO2 Dashboard')">
+      <nav>Co2 Dashboard</nav>
+    </article>
+  </a>
+
+  <!-- This block is only visible to users with the 'Gebruiker' role -->
+  <a routerLink="/contact" class="link-article">
+    <article class="block" *ngIf="hasAccess('Contact')">
+      <p>
+        <!-- This message informs 'Gebruiker' users that they don't have administrative access -->
+        U heeft geen rechten tot de administratieve functies, als dit incorrect
+        is kan u
+        <!-- This styles the link that leads to the 'Contact' page -->
+        <span class="link-text">contact</span> maken met onze beheerders
+      </p>
+    </article>
+  </a>
+</section>

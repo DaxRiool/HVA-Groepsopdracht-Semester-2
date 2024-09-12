@@ -1,0 +1,32 @@
+<section class="container">
+  <!-- The form for filtering car loans -->
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <!-- The section for selecting the start date -->
+    <section id="fromDateContainer">
+      <label for="fromDate" class="buttons">Van</label>
+      <input type="date" name="fromDate" [(ngModel)]="fromDate" class="buttons" />
+    </section>
+    <br />
+    <!-- The section for selecting the end date -->
+    <section id="toDateContainer">
+      <label for="toDate" class="buttons">Tot </label>
+      <input type="date" name="toDate" [(ngModel)]="toDate" class="buttons" />
+    </section>
+    <br />
+
+    <section>
+      <!-- The dropdown for selecting the fuel type --> 
+      <label for="brandstofType">Selecteer brandstof type:</label>
+      <select id="fuelType" name="fuelType" [(ngModel)]="fuelType" (change)="onFuelTypeChange(fuelType)">
+        <option value="noFuelType">Alle brandstof</option>
+        <option *ngFor="let fuelType of fuelTypes">{{fuelType}}</option>
+      </select>
+    </section>
+    <!-- The section for displaying error messages -->
+    <section *ngIf="errorMessage" class="errorMessage">
+      {{ errorMessage }}
+    </section>
+    <!-- The submit button -->
+    <button type="submit" id="search">Zoek</button>
+  </form>
+</section>

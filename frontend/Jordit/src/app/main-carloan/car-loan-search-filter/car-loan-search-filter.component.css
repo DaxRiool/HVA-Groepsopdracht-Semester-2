@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(216, 147, 217, 0.3);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 25%;
+  position: relative;
+}
+
+.buttons {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  border: 1px solid #4c66c0;
+}
+
+#search {
+  background-color: #4c66c0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#brandstofType {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+}
+#labelFuelType {
+  position: absolute;
+  top: 10%;
+  right: 40%;
+}
+
+.errorMessage {
+  color: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}

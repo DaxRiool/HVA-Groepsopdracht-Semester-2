@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 80vh;
+
+  }
+  
+  .block {
+    margin: 0 20px;
+    padding: 40px;
+    border: 1px solid #4c66c0;
+    text-align: center;
+    background-color: #4c66c0;
+    border-radius: 10px;
+  }
+
+  .link-article {
+    text-decoration: none; /* Remove the default underline from links */
+    color: white;
+  }
+  
+  .link-text {
+    color: white; /* Make the link text white */
+    text-decoration: underline; /* Add underline to the link text */
+  }

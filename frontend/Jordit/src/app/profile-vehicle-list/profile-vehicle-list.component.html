@@ -1,0 +1,27 @@
+<section class="container-list">
+  <header class="list-header">
+    <p></p>
+    <h1>Voertuigen</h1>
+    <button class="delete-button" (click)="openPopupAddVehicle()">
+      Toevoegen
+    </button>
+  </header>
+  <table class="list">
+    <tbody *ngFor="let vehicle of vehicles">
+      <tr class="list-row">
+        <td>
+          <p class="row-name">
+            {{ vehicle.vehicleType }} {{ vehicle.fuelType }}
+          </p>
+        </td>
+        <td class="buttons">
+          <button
+            class="delete-button"
+            (click)="openPopupDeleteVehicle(vehicle)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

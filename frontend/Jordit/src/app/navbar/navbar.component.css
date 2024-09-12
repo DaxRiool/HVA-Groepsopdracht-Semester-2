@@ -1,0 +1,51 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(216, 147, 217, 0.3);
+}
+
+.app-links {
+    background-color: #4c66c0;
+    padding: 1em;
+}
+
+.app-links a {
+    margin-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+.app-links a:first-child {
+    margin-left: 2em
+}
+
+.user-links {
+    padding: 1em;
+}
+
+.user-links a {
+    margin-right: 2em;
+    color: black;
+}
+
+.profile-link {
+    font-size: large;
+}
+
+.logout-button {
+    background-color: #4c66c0;
+    color: white;
+    border: none;
+    font-size: large;
+    border-radius: 5px;   
+}
+
+.logout-button:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+

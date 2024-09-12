@@ -1,0 +1,24 @@
+.user-info {
+    width: 30%;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info-row {
+    background-color: #4c66c0;
+    padding: 0 1em;
+    font-size: xx-large;
+    border-radius: 5px;
+}
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10em;
+}

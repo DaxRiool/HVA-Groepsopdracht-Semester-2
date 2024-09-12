@@ -1,0 +1,12 @@
+<section class="container">
+    <h1>Leen confimatie</h1>
+    <p>Weet u zeker dat u de volgende auto wilt lenen?</p>
+    <p>Voertuig: {{ selectedVehicle.licensePlate }}, {{ selectedVehicle.fuelType }}, {{ selectedVehicle.vehicleType }}
+    </p>
+    <p>Van: {{ fromDate | date:'shortDate' }}</p>
+    <p>Tot: {{ toDate | date:'shortDate' }}</p>
+</section>
+<section>
+    <button (click)="cancel()" class="button">Anuleren</button>
+    <button [mat-dialog-close]="true" class="button">Bevestigen</button>
+</section>

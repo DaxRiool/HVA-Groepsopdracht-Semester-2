@@ -1,0 +1,51 @@
+<main>
+  <form #form="ngForm" (ngSubmit)="checkInput()">
+    <h1>Registreren</h1>
+    <label for="Email">E-mail</label><br />
+    <input
+      type="email"
+      required
+      maxlength="31"
+      placeholder="Uw werk email alstublieft"
+      name="email"
+      autofocus
+      [(ngModel)]="email"
+      id="email"
+      [ngClass]="{ invalid: invalidEmail }"
+    />
+    <br />
+    <label for="Department">Afdeling</label><br />
+    <select
+      id="selectId"
+      name="chosenDepartment"
+      [(ngModel)]="chosenDepartment"
+    >
+      <option
+        value="{{ department }}"
+        *ngFor="let department of departments"
+        id="department"
+      >
+        {{ department }}
+      </option>
+    </select>
+    <br />
+    <label for="password">Wachtwoord</label><br />
+    <input
+      type="password"
+      placeholder="wachtwoord met 8 letters 1 cijfer en hoofletter"
+      name="wachtwoord"
+      required
+      minlength="8"
+      [(ngModel)]="password"
+      id="password"
+      [ngClass]="{ invalidPassword: invalidPassword }"
+    />
+    <button type="submit">Registreren</button>
+    <div *ngIf="blackMessageToFront" id="succsesFullRegistration">
+      {{ blackMessageToFront }}
+    </div>
+    <div *ngIf="redMessageToFront" id="errorMessage">
+      {{ redMessageToFront }}
+    </div>
+  </form>
+</main>

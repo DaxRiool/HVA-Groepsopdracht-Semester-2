@@ -1,0 +1,20 @@
+<section class="container">
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <section *ngIf="businessVehicle.length > 0">
+        <h2>Beschikbare auto's:</h2>
+        <form>
+            <table>
+                <tr *ngFor="let vehicle of businessVehicle">
+                    <td><strong>Kenteken:</strong> {{ vehicle.licensePlate }}</td>
+                    <td><strong>Voertuig:</strong> {{ vehicle.vehicleType }}</td>
+                    <td><strong>Brandstof:</strong> {{ vehicle.fuelType }}</td>
+                    <td><input type="radio" name="vehicle" [(ngModel)]="selectedVehicle" [value]="vehicle"></td>
+                </tr>
+            </table>
+            <button *ngIf="selectedVehicle" (click)="openConfirmLoanPopup(selectedVehicle)" type="submit"
+                class="button">Lening bevestigen</button>
+        </form>
+    </section>
+</section>

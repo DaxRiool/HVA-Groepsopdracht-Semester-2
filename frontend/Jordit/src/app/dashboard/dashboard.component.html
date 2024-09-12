@@ -1,0 +1,68 @@
+<header>
+  <section class="header-section">
+    <aside class="header-aside">
+      <!-- date filter -->
+      <app-dashboard-search-filter (onSubmitted)="onSubmitted($event)">
+      </app-dashboard-search-filter>
+      <p id="error" class="errorMessage">{{ errorMessage }}</p>
+    </aside>
+    <article class="header-article">
+      <section class="rounded-box">
+        <h2>Totale Co2</h2>
+        <!-- totalCo2Kg is the total CO2 emissions in kilograms -->
+        <h2>{{ totalCo2Kg | number: "1.2-2" }} Kg</h2>
+      </section>
+    </article>
+  </section>
+</header>
+
+<!-- A horizontal rule for styling -->
+<hr class="styled-hr" />
+
+<main>
+  <section class="main-section">
+    <!-- The first article displays the total kilometers -->
+    <article class="main-article">
+      <h1>{{ totalKm }}</h1>
+      <p>Km</p>
+    </article>
+    <!-- The second article displays the total number of trips -->
+    <article class="main-article">
+      <h1>{{ totalEntries }}</h1>
+      <p>Ritten</p>
+    </article>
+    <!-- The third article displays the department with the highest CO2 emissions -->
+    <article class="main-article">
+      <h1>{{ highestPollutingDepartment }}</h1>
+      <p>Meest Uitstotende Afdeling</p>
+    </article>
+    <!-- The fourth article displays the average CO2 emissions per trip -->
+    <article class="main-article">
+      <h1>{{ avgCo2 }} gram Co2</h1>
+      <p>Gemiddelde Co2 per rit</p>
+    </article>
+  </section>
+
+  <!-- A table displaying the details of each trip -->
+  <table>
+    <thead>
+      <tr>
+        <th>Afdeling</th>
+        <th>Voertuig</th>
+        <th>Brandstof</th>
+        <th>KM</th>
+        <th>gram co2</th>
+      </tr>
+    </thead>
+    <!-- The tbody section uses Angular's *ngFor directive to create a table row for each trip -->
+    <tbody>
+      <tr *ngFor="let trip of trips">
+        <td>{{ trip.department }}</td>
+        <td>{{ trip.vehicleType }}</td>
+        <td>{{ trip.fuelType }}</td>
+        <td>{{ trip.km }}</td>
+        <td>{{ trip.km * trip.gcorkm }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

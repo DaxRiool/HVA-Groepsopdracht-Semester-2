@@ -1,0 +1,40 @@
+<main>
+  <h1>Voertuig Toevoegen</h1>
+  <form #form="ngForm" (ngSubmit)="addVehicle()">
+    <section>
+      <article>
+        <label for="vehicleType">Type Voertuig</label>
+
+        <select
+          [(ngModel)]="vehicleType"
+          id="vehicleType"
+          name="vehicleType"
+          (change)="onVehicleTypeChange(vehicleType)"
+        >
+          <option
+            *ngFor="let vehicleType of valuesVehicleTypes"
+            [value]="vehicleType"
+          >
+            {{ vehicleType }}
+          </option>
+        </select>
+      </article>
+      <article>
+        <label for="fuelType">Type Brandstof</label>
+        <select
+          [(ngModel)]="fuelType"
+          id="fuelType"
+          name="fuelType"
+          (change)="onFuelTypeChange(fuelType)"
+        >
+          <option *ngFor="let fuelType of valuesFuelTypes" [value]="fuelType">
+            {{ fuelType }}
+          </option>
+        </select>
+      </article>
+    </section>
+    <button type="submit">Toevoegen</button>
+    <p id="error" class="errorMessage" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <p id="succes" class="successMessage" *ngIf="successMessage">{{ successMessage }}</p>
+  </form>
+</main>

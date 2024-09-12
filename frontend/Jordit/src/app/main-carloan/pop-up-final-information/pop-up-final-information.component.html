@@ -1,0 +1,16 @@
+<section class="container">
+    <h2>Leen informatie</h2>
+    <section class="infoSection">
+        <h3>Voertuig</h3>
+        <p><strong>Kenteken</strong> {{ vehicle.licensePlate }}</p>
+        <p><strong>Brandstof:</strong> {{ vehicle.fuelType }}</p>
+        <p><strong>Voertuig:</strong> {{ vehicle.vehicleType }}</p>
+    </section>
+    <section class="infoSection">
+        <h3>Leen informatie</h3>
+        <p><strong>Van:</strong> {{ carLoan.startDate | date:'shortDate' }}</p>
+        <p><strong>Tot</strong> {{ carLoan.endDate | date:'shortDate' }}</p>
+        <p><strong>Gekoppelde email:</strong> {{ carLoan.email }}</p>
+    </section>
+    <button (click)="close()" class="button">Sluiten</button>
+</section>

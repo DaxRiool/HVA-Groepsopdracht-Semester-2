@@ -1,0 +1,12 @@
+.pop-up-button-delete {
+    background-color: #4c66c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    margin: 10px;
+  }
+
+  .pop-up-button-delete:hover {
+    cursor: pointer;
+  }

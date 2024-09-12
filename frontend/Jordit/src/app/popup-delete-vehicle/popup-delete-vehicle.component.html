@@ -1,0 +1,11 @@
+<article>
+  <h1>Wil je {{ vehicle.vehicleType}} {{vehicle.fuelType}} verwijderen</h1>
+  
+  <button
+    class="pop-up-button-delete" 
+    (click)="deleteVehicle(vehicle)">
+    Delete
+  </button>
+  
+  <p class="succesMessage">{{ successMessage }}</p>
+</article>

@@ -1,0 +1,116 @@
+<main class="container">
+  <!-- The form for filtering the CO2 data overview -->
+  <form>
+    <!-- The fieldset that gives it a border and legend -->
+    <fieldset class="rounded-box">
+      <legend>Filter CO2 Data</legend>
+      <!-- The section for selecting the start and end date, or all time -->
+      <section class="date-container">
+        <section class="date-inputs">
+          <!-- date input. It's disabled when "allTime" is true. -->
+          <label for="fromDate">Van </label>
+          <!-- dit is 2-way binding -->
+          <input
+            type="date"
+            id="fromDate"
+            name="fromDate"
+            [(ngModel)]="selectedFromDate"
+            (change)="onDateChange(selectedFromDate, true)"
+            [disabled]="allTime"
+          />
+          <br />
+          <label for="toDate">Tot </label>
+          <input
+            type="date"
+            id="toDate"
+            name="toDate"
+            [(ngModel)]="selectedToDate"
+            (change)="onDateChange(selectedToDate, false)"
+            [disabled]="allTime"
+          />
+        </section>
+        <!-- Vertical line separating the date inputs and the checkbox -->
+        <hr class="vertical-line" />
+        <section class="checkbox-container">
+          <!-- Checkbox for "all time". When checked, it disables the date inputs and clears their values. -->
+          <input
+            type="checkbox"
+            id="allTime"
+            name="allTime"
+            [(ngModel)]="allTime"
+            (change)="onCheckboxChange()"
+          />
+          <label for="allTime">Alle tijd</label>
+        </section>
+      </section>
+      <!-- The dropdowns for selecting the department, vehicle, and fuel type -->
+      <section class="dropdown-container">
+        <!-- Fieldset for selecting the department -->
+        <fieldset>
+          <legend>Afdeling:</legend>
+          <select
+            id="department"
+            name="department"
+            [(ngModel)]="selectedDepartment"
+          >
+            <!-- Options for the department dropdown, generated from the departments array -->
+            <option value="">Elke afdeling</option>
+            <option
+              *ngFor="let department of departments"
+              [value]="department.department"
+            >
+              {{ department.department }}
+            </option>
+          </select>
+        </fieldset>
+
+        <!-- Fieldset for selecting the vehicle type -->
+        <fieldset>
+          <legend>Voertuig:</legend>
+          <select
+            id="vehicleType"
+            name="vehicleType"
+            [(ngModel)]="selectedVehicleType"
+            (change)="onVehicleTypeChange(selectedVehicleType)"
+          >
+            <option value="">Elk voertuig</option>
+            <!-- Options for the vehicle type dropdown, generated from the vehicleTypes array -->
+            <option
+              *ngFor="let vehicleType of vehicleTypes"
+              [value]="vehicleType"
+            >
+              {{ vehicleType }}
+            </option>
+          </select>
+        </fieldset>
+
+        <!-- Fieldset for selecting the fuel type -->
+        <fieldset>
+          <legend>Brandstof:</legend>
+          <select
+            id="fuelType"
+            name="fuelType"
+            [(ngModel)]="selectedFuelType"
+            (change)="onFuelTypeChange(selectedFuelType)"
+          >
+            <option value="">Alle brandstof</option>
+            <!-- Options for the fuel type dropdown, generated from the fuelTypes array -->
+            <option *ngFor="let fuelType of fuelTypes" [value]="fuelType">
+              {{ fuelType }}
+            </option>
+          </select>
+        </fieldset>
+      </section>
+      <!-- The submit button -->
+      <button
+        type="submit"
+        id="search"
+        class="search-button"
+        [disabled]="!searchEnabled"
+        (click)="onSubmit()"
+      >
+        Bevestigen
+      </button>
+    </fieldset>
+  </form>
+</main>

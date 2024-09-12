@@ -1,0 +1,53 @@
+stages:
+    - install
+    - test
+    - lint
+    - build
+    - deploy
+
+variables:
+  NODE_ENV: 'test'
+
+cache:
+  paths:
+    - node_modules/
+
+
+install:
+  stage: install
+  image: node:latest
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+  tags:
+  - hva
+
+lint:
+  stage: lint
+  image: node:latest
+  allow_failure: true
+  script:
+    - npx prettier . --check
+  tags:
+  - hva
+
+
+build:
+    stage: build
+    image: node:latest
+    script:
+      - npm run debug
+    tags:
+    - hva
+
+test:
+  stage: test
+  image: node:latest
+  allow_failure: true
+  script:
+    - npm test
+  tags:
+  - hva
+

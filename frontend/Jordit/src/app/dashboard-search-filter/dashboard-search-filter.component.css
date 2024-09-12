@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  min-width: min-content;
+}
+
+.rounded-box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(216, 147, 217, 0.3);
+  padding: 0 20px 20px 20px;
+  border-radius: 5px;
+}
+
+.date-container label,
+.date-container input[type="date"] {
+  grid-column: 1;
+}
+
+.date-container input[type="checkbox"] .date-container label[for="allTime"] {
+  grid-column: 3;
+}
+
+.date-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dropdown-container fieldset {
+  flex: 1;
+}
+
+.vertical-line {
+  height: 80px;
+  width: 0px;
+  border-left: 1px solid black;
+  margin: 10px;
+  grid-column: 2;
+}
+
+.buttons {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #4c66c0;
+  margin-top: 20px;
+}
+
+#search {
+  background-color: #4c66c0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#search:disabled {
+  background-color: #a8b2d1; /* Lighter shade of #4c66c0 */
+  color: #747474;
+}
+
+#brandstofType {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+}
+
+#labelFuelType {
+  position: absolute;
+  top: 10%;
+  right: 40%;
+}
+
+.errorMessage {
+  color: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
